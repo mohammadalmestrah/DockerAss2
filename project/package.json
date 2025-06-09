@@ -1,0 +1,27 @@
+{
+  "name": "docker-nodejs-app",
+  "version": "1.0.0",
+  "description": "Node.js application for Docker assignment",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "docker:build": "docker build -t nodejs-docker-app .",
+    "docker:run": "docker run -p 3000:3000 nodejs-docker-app",
+    "docker:run-detached": "docker run -d -p 3000:3000 --name nodejs-app nodejs-docker-app",
+    "docker:stop": "docker stop nodejs-app",
+    "docker:remove": "docker rm nodejs-app",
+    "docker:logs": "docker logs nodejs-app",
+    "docker:exec": "docker exec -it nodejs-app /bin/bash",
+    "compose:up": "docker-compose up",
+    "compose:down": "docker-compose down",
+    "test": "echo \"Docker Node.js app - tests would go here\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
